@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <title>Just Cos</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Learn trig by solving it</p>
+          <h1>Just Cos</h1>
+        </div>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span aria-hidden="true">☾</span>
+        </button>
+      </header>
+
+      <section class="workspace" aria-label="Triangle calculator">
+        <form class="input-panel" id="triangleForm">
+          <div class="panel-heading">
+            <h2>Triangle Data</h2>
+            <button class="ghost-button" id="fillExample" type="button">Example</button>
+          </div>
+
+          <div class="datum-grid">
+            <label class="datum">
+              <span>Side a</span>
+              <input id="sideA" inputmode="decimal" name="a" placeholder="opposite A">
+            </label>
+            <label class="datum">
+              <span>Side b</span>
+              <input id="sideB" inputmode="decimal" name="b" placeholder="opposite B">
+            </label>
+            <label class="datum">
+              <span>Side c</span>
+              <input id="sideC" inputmode="decimal" name="c" placeholder="opposite C">
+            </label>
+            <label class="datum">
+              <span>Angle A</span>
+              <input id="angleA" inputmode="decimal" name="A" placeholder="degrees">
+            </label>
+            <label class="datum">
+              <span>Angle B</span>
+              <input id="angleB" inputmode="decimal" name="B" placeholder="degrees">
+            </label>
+            <label class="datum">
+              <span>Angle C</span>
+              <input id="angleC" inputmode="decimal" name="C" placeholder="degrees">
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="primary-button" type="submit">Solve</button>
+            <button class="ghost-button" id="clearTriangle" type="button">Clear</button>
+          </div>
+        </form>
+
+        <section class="visual-panel" aria-live="polite">
+          <div class="status-strip" id="statusStrip">Enter at least three useful facts, including one side.</div>
+          <div class="triangle-stage" id="triangleStage">
+            <svg id="triangleSvg" viewBox="0 0 360 280" role="img" aria-label="Triangle diagram"></svg>
+          </div>
+        </section>
+      </section>
+
+      <section class="results-area" aria-live="polite">
+        <div class="result-tabs" id="solutionTabs"></div>
+        <article class="result-panel" id="resultPanel">
+          <h2>Ready when you are.</h2>
+          <p>Add sides and angles above. Just Cos will explain what is missing, what formula fits, and why the triangle can or cannot exist.</p>
+        </article>
+      </section>
+
+      <section class="lookup-area" aria-label="Trig lookup">
+        <div class="lookup-heading">
+          <h2>Trig Lookup</h2>
+          <p>Check a trig ratio without solving a whole triangle.</p>
+        </div>
+        <form class="lookup-form" id="lookupForm">
+          <label>
+            <span>Function</span>
+            <select id="lookupFn">
+              <option value="sin">sin</option>
+              <option value="cos">cos</option>
+              <option value="tan">tan</option>
+              <option value="sec">sec</option>
+              <option value="csc">csc</option>
+              <option value="cot">cot</option>
+            </select>
+          </label>
+          <label>
+            <span>Angle</span>
+            <input id="lookupAngle" inputmode="decimal" placeholder="degrees">
+          </label>
+          <button class="primary-button" type="submit">Look Up</button>
+        </form>
+        <div class="lookup-result" id="lookupResult">sin, cos, tan, sec, csc, and cot are waiting here.</div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
