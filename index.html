@@ -8,24 +8,30 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <!-- app-shell is the full page container; CSS limits its width on desktop. -->
     <main class="app-shell">
+      <!-- topbar contains the brand text and the dark/light mode control. -->
       <header class="topbar">
         <div>
-          <p class="eyebrow">Learn trig by solving it</p>
-          <h1>Just Cos</h1>
+          <!-- The eyebrow line names the presenters; the main heading names the app. -->
+          <p class="eyebrow">ErisElizabeth.com &amp; UpTheScale present:</p>
+          <h1>JustCos</h1>
         </div>
         <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <span aria-hidden="true">☾</span>
+          <span aria-hidden="true">DM</span>
         </button>
       </header>
 
+      <!-- workspace holds the input form and the live triangle drawing side by side. -->
       <section class="workspace" aria-label="Triangle calculator">
+        <!-- triangleForm is where learners enter any known sides and angles. -->
         <form class="input-panel" id="triangleForm">
           <div class="panel-heading">
             <h2>Triangle Data</h2>
             <button class="ghost-button" id="fillExample" type="button">Example</button>
           </div>
 
+          <!-- datum-grid groups the three sides and three angles into matching fields. -->
           <div class="datum-grid">
             <label class="datum">
               <span>Side a</span>
@@ -59,6 +65,7 @@
           </div>
         </form>
 
+        <!-- visual-panel announces solve status and displays the generated SVG triangle. -->
         <section class="visual-panel" aria-live="polite">
           <div class="status-strip" id="statusStrip">Enter at least three useful facts, including one side.</div>
           <div class="triangle-stage" id="triangleStage">
@@ -67,6 +74,7 @@
         </section>
       </section>
 
+      <!-- results-area explains the answer and shows the formula path after solving. -->
       <section class="results-area" aria-live="polite">
         <div class="result-tabs" id="solutionTabs"></div>
         <article class="result-panel" id="resultPanel">
@@ -75,6 +83,7 @@
         </article>
       </section>
 
+      <!-- lookup-area is the separate trig ratio calculator for quick sin/cos/tan work. -->
       <section class="lookup-area" aria-label="Trig lookup">
         <div class="lookup-heading">
           <h2>Trig Lookup</h2>
